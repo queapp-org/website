@@ -2,7 +2,7 @@
 // que's generated docs into Starlight pages. No network and no files here, so
 // the tests can feed it fixtures.
 
-export const QUE_REPO = 'que-agents/que'
+export const QUE_REPO = 'queapp-org/que'
 
 /**
  * @typedef {object} Release

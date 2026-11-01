@@ -1,7 +1,7 @@
 # Contributing
 
 Thanks for helping with que's website. For the app itself, see que's
-[CONTRIBUTING.md](https://github.com/que-agents/que/blob/main/CONTRIBUTING.md).
+[CONTRIBUTING.md](https://github.com/queapp-org/que/blob/main/CONTRIBUTING.md).
 
 ## Run it
 
@@ -25,7 +25,7 @@ oxlint and oxfmt on the files you stage.
   when the site is served under one.
 - The Reference pages (`/reference/cli/`, `/reference/configuration/`) are generated from the
   latest que release at build time. Change them in
-  [que-agents/que](https://github.com/que-agents/que), not here.
+  [queapp-org/que](https://github.com/queapp-org/que), not here.
 
 ## Style
 

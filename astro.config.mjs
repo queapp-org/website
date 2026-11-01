@@ -5,7 +5,7 @@ import { baseLinks } from './src/lib/base-links.mjs'
 
 // CI passes the real origin and base path with `astro build --site … --base …`.
 export default defineConfig({
-  site: 'https://que-agents.com',
+  site: 'https://queapp.org',
   integrations: [
     starlight({
       title: 'que',
@@ -14,8 +14,8 @@ export default defineConfig({
       favicon: '/favicon.svg',
       logo: { light: './src/assets/que-mark-light.svg', dark: './src/assets/que-mark-dark.svg' },
       components: { Search: './src/components/Search.astro' },
-      social: [{ icon: 'github', label: 'GitHub', href: 'https://github.com/que-agents/que' }],
-      editLink: { baseUrl: 'https://github.com/que-agents/website/edit/main/' },
+      social: [{ icon: 'github', label: 'GitHub', href: 'https://github.com/queapp-org/que' }],
+      editLink: { baseUrl: 'https://github.com/queapp-org/website/edit/main/' },
       customCss: ['./src/styles/theme.css'],
       expressiveCode: { styleOverrides: { borderRadius: '4px' } },
       sidebar: [

@@ -18,7 +18,7 @@ describe('withBase', () => {
     for (const url of [
       '../install/',
       '#first-launch',
-      'https://github.com/que-agents/que',
+      'https://github.com/queapp-org/que',
       '//cdn.example.test/x',
       '/website/guides/'
     ]) {

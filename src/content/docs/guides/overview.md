@@ -65,5 +65,5 @@ terminals to find out.
 - **Local**: no account and no server. The terminals, the state and the logs stay on your Mac.
 
 que is open source. Its code, its issues and
-[how to contribute](https://github.com/que-agents/que/blob/main/CONTRIBUTING.md) are in
-[que-agents/que](https://github.com/que-agents/que).
+[how to contribute](https://github.com/queapp-org/que/blob/main/CONTRIBUTING.md) are in
+[queapp-org/que](https://github.com/queapp-org/que).
