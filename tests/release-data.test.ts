@@ -4,26 +4,26 @@ import { mapLinks, pickRelease, rewriteLink, transformDoc } from '../scripts/rel
 // A trimmed GitHub "latest release" response, in the shape the API returns.
 const latest = {
   tag_name: 'v0.2.0',
-  html_url: 'https://github.com/que-agents/que/releases/tag/v0.2.0',
+  html_url: 'https://github.com/queapp-org/que/releases/tag/v0.2.0',
   published_at: '2026-10-28T23:41:02Z',
   assets: [
     {
       name: 'latest-mac.yml',
       size: 485,
       browser_download_url:
-        'https://github.com/que-agents/que/releases/download/v0.2.0/latest-mac.yml'
+        'https://github.com/queapp-org/que/releases/download/v0.2.0/latest-mac.yml'
     },
     {
       name: 'que-0.2.0-arm64.dmg',
       size: 131243582,
       browser_download_url:
-        'https://github.com/que-agents/que/releases/download/v0.2.0/que-0.2.0-arm64.dmg'
+        'https://github.com/queapp-org/que/releases/download/v0.2.0/que-0.2.0-arm64.dmg'
     },
     {
       name: 'que-0.2.0-arm64.zip',
       size: 127146274,
       browser_download_url:
-        'https://github.com/que-agents/que/releases/download/v0.2.0/que-0.2.0-arm64.zip'
+        'https://github.com/queapp-org/que/releases/download/v0.2.0/que-0.2.0-arm64.zip'
     }
   ]
 }
@@ -31,7 +31,7 @@ const latest = {
 const release = {
   tag: 'v0.2.0',
   version: '0.2.0',
-  url: 'https://github.com/que-agents/que/releases/tag/v0.2.0'
+  url: 'https://github.com/queapp-org/que/releases/tag/v0.2.0'
 }
 
 describe('pickRelease', () => {
@@ -40,10 +40,10 @@ describe('pickRelease', () => {
       tag: 'v0.2.0',
       version: '0.2.0',
       publishedAt: '2026-10-28T23:41:02Z',
-      url: 'https://github.com/que-agents/que/releases/tag/v0.2.0',
+      url: 'https://github.com/queapp-org/que/releases/tag/v0.2.0',
       dmg: {
         name: 'que-0.2.0-arm64.dmg',
-        url: 'https://github.com/que-agents/que/releases/download/v0.2.0/que-0.2.0-arm64.dmg',
+        url: 'https://github.com/queapp-org/que/releases/download/v0.2.0/que-0.2.0-arm64.dmg',
         size: 131243582
       }
     })
@@ -90,19 +90,19 @@ describe('rewriteLink', () => {
 
   it('points a link to any other repo file at GitHub, at the tag', () => {
     expect(rewriteLink('../README.md#install', from)).toBe(
-      'https://github.com/que-agents/que/blob/v0.2.0/README.md#install'
+      'https://github.com/queapp-org/que/blob/v0.2.0/README.md#install'
     )
     expect(rewriteLink('design.md', from)).toBe(
-      'https://github.com/que-agents/que/blob/v0.2.0/docs/design.md'
+      'https://github.com/queapp-org/que/blob/v0.2.0/docs/design.md'
     )
     expect(rewriteLink('../src/shared/config.ts', from)).toBe(
-      'https://github.com/que-agents/que/blob/v0.2.0/src/shared/config.ts'
+      'https://github.com/queapp-org/que/blob/v0.2.0/src/shared/config.ts'
     )
   })
 
   it('points an image at the raw file, at the tag', () => {
     expect(rewriteLink('images/quiet-mode.gif', { ...from, image: true })).toBe(
-      'https://raw.githubusercontent.com/que-agents/que/v0.2.0/docs/images/quiet-mode.gif'
+      'https://raw.githubusercontent.com/queapp-org/que/v0.2.0/docs/images/quiet-mode.gif'
     )
   })
 
@@ -243,7 +243,7 @@ describe('transformDoc', () => {
           'editUrl: false',
           '---',
           '',
-          "_Generated from [que 0.2.0](https://github.com/que-agents/que/releases/tag/v0.2.0). To change it, edit que's source in [que-agents/que](https://github.com/que-agents/que)._",
+          "_Generated from [que 0.2.0](https://github.com/queapp-org/que/releases/tag/v0.2.0). To change it, edit que's source in [queapp-org/que](https://github.com/queapp-org/que)._",
           '',
           '| Command | What it does |'
         ].join('\n')
@@ -268,7 +268,7 @@ describe('transformDoc', () => {
     expect(page).toContain('[the CLI](/reference/cli/#que-config-set)')
     expect(page).toContain('[Instructions](#instructions)')
     expect(page).toContain(
-      '[the design notes](https://github.com/que-agents/que/blob/v0.2.0/docs/design.md)'
+      '[the design notes](https://github.com/queapp-org/que/blob/v0.2.0/docs/design.md)'
     )
   })
 

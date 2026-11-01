@@ -2,11 +2,11 @@
   "name": "que-website",
   "version": "0.0.0",
   "private": true,
-  "description": "The source for que-agents.com: que's docs and downloads.",
+  "description": "The source for queapp.org: que's docs and downloads.",
   "license": "Apache-2.0",
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/que-agents/website.git"
+    "url": "git+https://github.com/queapp-org/website.git"
   },
   "type": "module",
   "engines": {
