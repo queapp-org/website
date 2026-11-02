@@ -6,7 +6,7 @@ describe('withBase', () => {
     expect(withBase('/guides/install/#first-launch', '/website')).toBe(
       '/website/guides/install/#first-launch'
     )
-    expect(withBase('/images/quiet-mode.gif', '/website/')).toBe('/website/images/quiet-mode.gif')
+    expect(withBase('/images/example.png', '/website/')).toBe('/website/images/example.png')
   })
 
   it('changes nothing when the site is at the root', () => {

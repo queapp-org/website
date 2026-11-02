@@ -21,8 +21,6 @@ its own, and every unlock shows up in the morning report.
 It works like putting your phone in a box by the door. Nothing is out of reach; reaching for it is
 a decision now, not a reflex.
 
-![que going quiet: the sessions keep running, the window shows only whether they are running and not stuck, and looking closer is a time-boxed unlock](/images/quiet-mode.gif)
-
 ## A day with que
 
 **At work.** Every task gets its own workspace: a git worktree on its own branch, with your repo's

@@ -101,8 +101,8 @@ describe('rewriteLink', () => {
   })
 
   it('points an image at the raw file, at the tag', () => {
-    expect(rewriteLink('images/quiet-mode.gif', { ...from, image: true })).toBe(
-      'https://raw.githubusercontent.com/queapp-org/que/v0.2.0/docs/images/quiet-mode.gif'
+    expect(rewriteLink('images/example.png', { ...from, image: true })).toBe(
+      'https://raw.githubusercontent.com/queapp-org/que/v0.2.0/docs/images/example.png'
     )
   })
 
@@ -123,15 +123,17 @@ describe('mapLinks', () => {
 
   it('rewrites inline links, images and reference definitions', () => {
     const markdown = [
-      'See [the CLI](cli.md) and ![a gif](images/a.gif "Quiet").',
+      'See [the CLI](cli.md) and ![a screenshot](images/a.png "A title").',
       '',
       '[ref]: design.md'
     ].join('\n')
 
     expect(mapLinks(markdown, upper)).toBe(
-      ['See [the CLI](CLI.MD) and ![a gif](IMAGES/A.GIF "Quiet").', '', '[ref]: DESIGN.MD'].join(
-        '\n'
-      )
+      [
+        'See [the CLI](CLI.MD) and ![a screenshot](IMAGES/A.PNG "A title").',
+        '',
+        '[ref]: DESIGN.MD'
+      ].join('\n')
     )
   })
 

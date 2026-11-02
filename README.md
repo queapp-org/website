@@ -37,13 +37,13 @@ npm run dev       # the site with hot reload, at http://localhost:4321
 
 ## What comes from que
 
-The download button, the pages under Reference (`/reference/cli/`, `/reference/configuration/`)
-and the quiet-mode GIF are not in this repository. `scripts/fetch-release.mjs` fetches them from
-the latest que release each time the site is built or served: the release's version, date and
-DMG link into `src/data/release.json`, que's `docs/cli.md` and `docs/configuration.md` at that tag
-into `src/content/docs/reference/`, and the GIF into `public/images/`. All of them are
-gitignored. To change a reference page, change que in
-[queapp-org/que](https://github.com/queapp-org/que); the site picks it up with the next release.
+The download button and the pages under Reference (`/reference/cli/`, `/reference/configuration/`)
+are not in this repository. `scripts/fetch-release.mjs` fetches them from the latest que release
+each time the site is built or served: the release's version, date and DMG link into
+`src/data/release.json`, and que's `docs/cli.md` and `docs/configuration.md` at that tag into
+`src/content/docs/reference/`. All of them are gitignored. To change a reference page, change
+que in [queapp-org/que](https://github.com/queapp-org/que); the site picks it up with the next
+release.
 
 If GitHub cannot be reached, the script keeps the files from the last successful fetch. On a fresh
 clone with no network it fails with a message saying so. Set `GITHUB_TOKEN` if the GitHub API

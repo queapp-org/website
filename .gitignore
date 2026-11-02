@@ -7,7 +7,6 @@ dist/
 src/data/release.json
 src/content/docs/reference/cli.md
 src/content/docs/reference/configuration.md
-public/images/quiet-mode.gif
 
 # logs and local files
 npm-debug.log*
