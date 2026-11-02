@@ -3,8 +3,8 @@ name: Pages
 # Builds the site and deploys it to GitHub Pages. A push to main, the daily run
 # (so a new que release reaches the site within a day) and a manual run deploy;
 # a pull request only builds. Lint, Typecheck, Unit tests and Semgrep run in
-# their own workflows. The download link, the reference pages and the GIF come
-# from the latest que release at build time.
+# their own workflows. The download link and the reference pages come from the
+# latest que release at build time.
 
 on:
   push:

@@ -1,7 +1,7 @@
 // Fetches the latest que release and what the site builds from it: the
-// download link (src/data/release.json), the CLI and configuration reference
-// pages (from que's docs at that tag), and the quiet-mode GIF. Run by
-// `npm run dev` and `npm run build`; every output is gitignored.
+// download link (src/data/release.json) and the CLI and configuration
+// reference pages (from que's docs at that tag). Run by `npm run dev` and
+// `npm run build`; every output is gitignored.
 //
 // When a fetch fails, the previous outputs are kept (with a warning) if they
 // exist; with none to fall back on, it exits non-zero.
@@ -31,9 +31,8 @@ const DOCS = [
   }
 ]
 
-const GIF = { path: 'docs/images/quiet-mode.gif', out: 'public/images/quiet-mode.gif' }
 const RELEASE_OUT = 'src/data/release.json'
-const OUTPUTS = [RELEASE_OUT, ...DOCS.map((doc) => doc.out), GIF.out]
+const OUTPUTS = [RELEASE_OUT, ...DOCS.map((doc) => doc.out)]
 
 /**
  * @param {string} url
@@ -73,14 +72,12 @@ async function fetchAll() {
     }))
   )
 
-  const gif = Buffer.from(await (await get(raw(GIF.path))).arrayBuffer())
-
-  return { release, pages, gif }
+  return { release, pages }
 }
 
 /**
  * @param {string} path relative to the repo root
- * @param {string | Buffer} content
+ * @param {string} content
  */
 async function write(path, content) {
   const abs = join(root, path)
@@ -90,14 +87,13 @@ async function write(path, content) {
 
 try {
   // Everything is fetched before anything is written, so the outputs always come from one release.
-  const { release, pages, gif } = await fetchAll()
+  const { release, pages } = await fetchAll()
   await write(RELEASE_OUT, `${JSON.stringify(release, null, 2)}\n`)
 
   for (const page of pages) {
     await write(page.out, page.content)
   }
 
-  await write(GIF.out, gif)
   console.log(
     `fetch-release: que ${release.version} (${release.tag}), ${OUTPUTS.length} files written`
   )
