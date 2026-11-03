@@ -18,8 +18,12 @@ wants the newest build early; the app only offers you stable releases.
 
 ## First launch
 
-Builds are not signed yet, so macOS blocks the first launch. Open it anyway from
-**System Settings → Privacy & Security → Open Anyway**, or clear the quarantine flag:
+Open que from Applications, not from the disk image: its background service keeps running from
+wherever you first opened it. macOS asks once whether to open an app downloaded from the internet;
+choose **Open**.
+
+que is signed and notarized by Apple since 0.3.0. macOS refuses to open earlier releases, which are
+not signed, and may say they are damaged. To run one anyway, clear the quarantine flag:
 
 ```sh
 xattr -dr com.apple.quarantine /Applications/que.app
